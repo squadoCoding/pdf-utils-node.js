@@ -6,6 +6,8 @@ const mergePDFs = require("./mergePDF");
 const app = express();
 const upload = multer({ dest: "pdfs/" });
 
+let myDate = new Date();
+
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 app.use(express.static("./pdfs"));
@@ -17,12 +19,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/merge", upload.array("pdfs", 10), (req, res, next) => {
+  uniqueName = myDate.getTime();
   req.files.forEach(async (file, index) => {
-    let uniqueName = new Date();
-    uniqueName = uniqueName.getTime();
-    await mergePDFs("/pdfs/" + file.filename, "merged" + (uniqueName + 1));
+    let fileName = await mergePDFs("/pdfs/" + file.filename);
     if (index == req.files.length - 1) {
-      res.redirect("/merged" + uniqueName);
+      res.redirect("/" + fileName + ".pdf");
     }
   });
 });
