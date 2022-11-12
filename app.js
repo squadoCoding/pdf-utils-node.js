@@ -18,12 +18,11 @@ app.get("/", (req, res) => {
 
 app.post("/merge", upload.array("pdfs", 10), (req, res, next) => {
   req.files.forEach(async (file, index) => {
+    let uniqueName = new Date();
+    uniqueName = uniqueName.getTime();
     await mergePDFs("/pdfs/" + file.filename, "merged" + (uniqueName + 1));
     if (index == req.files.length - 1) {
-      let uniqueName = new Date();
-      uniqueName = uniqueName.getTime();
       res.redirect("/merged" + uniqueName);
-      uniqueName;
     }
   });
 });
