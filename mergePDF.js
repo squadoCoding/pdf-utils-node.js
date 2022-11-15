@@ -1,9 +1,9 @@
 const PDFMerger = require("pdf-merger-js");
 const path = require("path");
 
-const merger = new PDFMerger();
-
 const mergePDFs = async (pdf) => {
+  const merger = new PDFMerger();
+
   let uniqueName = new Date();
   uniqueName = uniqueName.getTime();
 
