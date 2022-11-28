@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: rgb(236, 236, 236);
+  --light: white;
+  --dark: rgb(2, 22, 81);
+  --primary: rgb(100, 172, 239);
+  --secondary: rgb(68, 0, 103);
+  --big: 2.5rem;
+  --small: 1.5rem;
+  --verySmall: 1.3rem;
+}
+
+body {
+  padding: 25px;
+  background-color: var(--bg);
+  color: var(--dark);
+}
+
+.btnPrimary {
+  padding: 6px;
+  margin: 20px 0px;
+  font-family: "PT Sans", sans-serif;
+  color: var(--light);
+  background-color: var(--primary);
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid var(--primary);
+  font-size: var(--verySmall);
+  transition: 0.3s all;
+}
+
+.btnPrimary:hover {
+  background-color: var(--light);
+  color: var(--primary);
+}
+
+h1 {
+  font-size: var(--big);
+  margin-bottom: 20px;
+  font-family: "Rubik Distressed", cursive;
+  text-shadow: 5px 5px 10px black;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+}
+
+.logo {
+  width: 70px;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  width: 100%;
+}
+
+#options details {
+  font-size: var(--small);
+  color: var(--secondary);
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "PT Sans", sans-serif;
+}
+
+#options details:hover {
+  box-shadow: 2px 2px 20px 3px rgba(0, 0, 0, 0.731);
+  border-radius: 5px;
+  color: var(--secondary);
+}
+
+#options details summary {
+  cursor: pointer;
+}
+
+input {
+  margin-top: 20px;
+  font-family: "PT Sans", sans-serif;
+  font-size: var(--verySmall);
+  color: var(--dark);
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.fileInputLabel {
+  border: 2px solid var(--primary);
+  height: 5rem;
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}

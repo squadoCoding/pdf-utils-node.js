@@ -1,17 +1,20 @@
-<section class="container">
-  <h1 class="my-5">Welcome to PDF utils</h1>
-  <form method="post" action="/merge" enctype="multipart/form-data">
-    <div class="input-group mb-3">
-      <input
-        type="file"
-        class="form-control"
-        accept=".pdf"
-        id="inputGroupFile02"
-        name="pdfs"
-        multiple
-      />
-      <label class="input-group-text" for="inputGroupFile02">Upload</label>
-    </div>
-    <input type="submit" value="Confirm" class="btn btn-primary my-4" />
-  </form>
+<h1><img src="/logo.png" class="logo" /> Welcome to PDF utils</h1>
+<section id="options">
+  <details>
+    <summary>Merge your PDF files quickly</summary>
+    <form method="post" action="/merge" enctype="multipart/form-data">
+      <label for="filesToMerge" class="fileInputLabel">
+        <input
+          type="file"
+          id="filesToMerge"
+          accept=".pdf"
+          name="pdfs"
+          style="padding: ;10px;"
+          multiple
+        />
+        <span>Click Here to Upload Files</span>
+      </label>
+      <input type="submit" class="btnPrimary" value="Merge PDFs" />
+    </form>
+  </details>
 </section>
