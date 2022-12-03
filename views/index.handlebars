@@ -2,14 +2,13 @@
 <section id="options">
   <details>
     <summary>Merge your PDF files quickly</summary>
-    <form method="post" action="/merge" enctype="multipart/form-data">
+    <form method="POST" action="/merge">
       <label for="filesToMerge" class="fileInputLabel">
         <input
           type="file"
           id="filesToMerge"
           accept=".pdf"
           name="pdfs"
-          style="padding: ;10px;"
           multiple
         />
         <span>Click Here to Upload Files</span>
